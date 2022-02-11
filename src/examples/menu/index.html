@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../../global.css" />
+    <link rel="stylesheet" href="./styles.css" />
+
+    <title>Menu</title>
+    <script
+      src="https://kit.fontawesome.com/3f6032f724.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main>
+      <!--Sem animação-->
+      <nav>
+        <div class="header">
+          <p>Menu</p>
+          <i class="fa-solid fa-bars button-no-animation"></i>
+        </div>
+        <ul class="list-no-animation">
+          <li>
+            <a>Home</a>
+          </li>
+          <li>
+            <a> Serviços</a>
+          </li>
+          <li>
+            <a> Sobre nós</a>
+          </li>
+          <li>
+            <a> Contato</a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav>
+        <div class="header">
+          <p>Menu</p>
+          <i class="fa-solid fa-bars button-animation"></i>
+        </div>
+        <ul class="list-animation">
+          <li>
+            <a>Home</a>
+          </li>
+          <li>
+            <a> Serviços</a>
+          </li>
+          <li>
+            <a> Sobre nós</a>
+          </li>
+          <li>
+            <a> Contato</a>
+          </li>
+        </ul>
+      </nav>
+    </main>
+  </body>
+  <script>
+    const menuNoAnimationBtn = document.querySelector('.button-no-animation');
+    const listNoAnimation = document.querySelector('.list-no-animation');
+
+    menuNoAnimationBtn.addEventListener('click', () => {
+      listNoAnimation.classList.toggle('closed');
+    })
+
+    const menuAnimationBtn = document.querySelector('.button-animation');
+    const listAnimation = document.querySelector('.list-animation');
+
+    menuAnimationBtn.addEventListener('click', () => {
+      listAnimation.classList.toggle('closed');
+    })
+  </script>
+</html>
