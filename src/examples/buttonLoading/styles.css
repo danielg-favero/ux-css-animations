@@ -1,0 +1,144 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.button-animation,
+.button-animation button {
+  position: relative;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	width: 240px;
+  height: 64px;
+	border-radius: 8px; 
+
+	background-color: #A06CD5;
+  color: white;
+
+	font-weight: bold;
+	text-transform: uppercase;
+  
+  transition: 500ms ease;
+
+	overflow: hidden; 
+}
+
+.button-animation:hover {
+  transform: scale(1.05);
+  background-color: #c18fd6;
+}
+
+.button-animation:active {
+  transform: scale(0.98);
+  background-color: #6247aa;
+}
+
+.button-loading::before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #6247AA;
+}
+
+.button-loading span {
+  position: absolute;
+}
+
+.button-loading span i {
+  transform-origin: center center;
+}
+
+.button-loading span:nth-of-type(1) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.button-loading span:nth-of-type(2) {
+  top: 100%;
+  transform: translateY(0%);
+  font-size: 24px;
+}
+
+.button-loading span:nth-of-type(3) {
+  display: none;
+}
+
+.active::before {
+  width: 100%;
+  transition: width 3s linear;
+}
+
+.active span:nth-of-type(1) {
+  top: -100%;
+  transform: translateY(-50%);
+}
+
+.active span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.active span:nth-of-type(2) i {
+  animation: loading 500ms linear infinite;
+}
+
+.active span:nth-of-type(3) {
+  display: none;
+}
+
+.finished {
+  background-color: #6247AA;
+}
+
+.finished .button-text {
+  display: none;
+}
+
+.finished .loading {
+  display: none;
+}
+
+.finished .check {
+  display: block !important;
+  font-size: 24px;
+  animation: scale 0.5s linear;
+}
+
+.finished .check i {
+  transform-origin: center center;
+}
+
+@keyframes loading {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(10);
+  }
+  50% {
+    transform: scale(0.2);
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  90% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
