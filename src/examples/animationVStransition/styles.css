@@ -1,0 +1,68 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 16px;
+
+  color: #f7f7f7;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 450px;
+  height: 450px;
+
+  position: relative;
+
+  border: 1px solid #272727;
+  padding: 24px;
+  padding-bottom: 32px;
+}
+
+.ball {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #A06CD5;
+}
+
+@keyframes transition {
+  80% {
+    opacity: 1;
+  }
+
+  to   {
+    transform: translate(300px, 280px);
+    opacity: 0;
+  }
+}
+
+#transition {
+  animation: transition 3s ease infinite;
+}
+
+@keyframes circlePath {
+  from { 
+    transform: rotate(0deg) translateX(100px) rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg) translateX(100px) rotate(-360deg);
+    transform-origin: bottom;
+  }
+}
+
+#animation {
+  position: absolute;
+  top: 200px;
+  left: 180px;
+  animation: circlePath 6s ease infinite;
+}
+
